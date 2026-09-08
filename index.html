@@ -84,8 +84,8 @@
       <p class="report-year">2026</p>
     </div>
     <div class="report-body">
-      <p>Full-stack platform for exploring player and team performance across three leagues: a PostgreSQL warehouse with one isolated schema per sport, a REST API on top, and a React/TypeScript portal in front. Advanced metrics (ERA, FIP, ANY/A, true shooting percentage) are implemented from their definitions and validated against published reference values before anything reaches the screen.</p>
-      <p class="report-tools">PostgreSQL &middot; REST API &middot; React &middot; TypeScript &middot; SQL</p>
+      <p>Full-stack platform for exploring player and team performance across three leagues: a PostgreSQL warehouse with one isolated schema per sport, a metered FastAPI service on top, and a React developer portal in front. Advanced metrics (ERA, FIP, ANY/A, true shooting percentage) are computed in SQL materialized views from their definitions and validated against published reference values before anything reaches the screen. Source: <a href="https://github.com/jakeyoung1/statvault">github.com/jakeyoung1/statvault</a>.</p>
+      <p class="report-tools">PostgreSQL &middot; Python &middot; FastAPI &middot; React &middot; SQL</p>
     </div>
     <div class="report-stat">
       <p class="stat-value">3</p>
@@ -132,12 +132,12 @@
       <p class="report-year">2026</p>
     </div>
     <div class="report-body">
-      <p>Full-stack Streamlit app that digitizes handwritten baseball scouting reports with the Claude Vision API, replacing manual data entry, then answers questions over the archive with retrieval-augmented search (FAISS plus Sentence Transformers). The whole path is automated: ingestion, AI inference, insight generation, PDF export. Built AI-assisted end to end, which cut time-to-feature by roughly 60%.</p>
-      <p class="report-tools">Python &middot; Streamlit &middot; Claude API &middot; FAISS &middot; RAG</p>
+      <p>Live at <a href="https://fieldvision-personal.onrender.com">fieldvision-personal.onrender.com</a>. Digitizes handwritten baseball scouting reports with the Claude Vision API, replacing manual data entry, then answers questions over the archive with retrieval-augmented search across 1,919 Branch Rickey scouting documents. Trackman pitch exports are parsed into command and stuff measures (strike rate, whiff rate per swing) that feed the written evaluation. The whole path is automated: ingestion, AI inference, insight generation, PDF export.</p>
+      <p class="report-tools">Python &middot; FastAPI &middot; Claude API &middot; TF-IDF retrieval &middot; Trackman data</p>
     </div>
     <div class="report-stat">
-      <p class="stat-value">&minus;60%</p>
-      <p class="stat-label">time-to-feature</p>
+      <p class="stat-value">1,919</p>
+      <p class="stat-label">scouting docs indexed</p>
     </div>
   </article>
 
