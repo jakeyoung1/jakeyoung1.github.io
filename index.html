@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jake Young · Data Analyst</title>
-<meta name="description" content="Jake Young: data analyst and business analyst. Six shipped analytics projects. SQL, Python, Tableau, Power BI, Excel. B.S. Business Analytics, May 2026.">
+<meta name="description" content="Jake Young: data analyst and business analyst. Eight shipped analytics projects. SQL, Python, Tableau, Power BI, Excel. B.S. Business Analytics, May 2026.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;900&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -50,6 +50,7 @@
         <tr>
           <th scope="col" title="Projects shipped">PRJ</th>
           <th scope="col" title="MLB player-seasons analyzed">SZN</th>
+          <th scope="col" title="Statcast pitches modeled">PCH</th>
           <th scope="col" title="Model fit, slugging study">R&sup2;</th>
           <th scope="col" title="Automated tests, pricemon">TST</th>
           <th scope="col" title="Time-to-feature, AI-assisted workflow">&Delta;TTF</th>
@@ -59,8 +60,9 @@
       </thead>
       <tbody>
         <tr>
-          <td>6</td>
+          <td>8</td>
           <td>3,483</td>
+          <td>1.27M</td>
           <td>.707</td>
           <td>53</td>
           <td>&minus;60%</td>
@@ -70,12 +72,12 @@
       </tbody>
     </table>
   </div>
-  <p class="legend">PRJ projects shipped &middot; SZN MLB player-seasons in regression study &middot; R&sup2; model fit of that study (p &lt; 0.001) &middot; TST automated tests behind pricemon &middot; &Delta;TTF time-to-feature change from AI-assisted development &middot; PRG varsity programs covered as statistician &middot; LNG English, Japanese (intermediate)</p>
+  <p class="legend">PRJ projects shipped &middot; SZN MLB player-seasons in regression study &middot; PCH Statcast pitches in the expected-whiff model &middot; R&sup2; model fit of that study (p &lt; 0.001) &middot; TST automated tests behind pricemon &middot; &Delta;TTF time-to-feature change from AI-assisted development &middot; PRG varsity programs covered as statistician &middot; LNG English, Japanese (intermediate)</p>
 </section>
 
 <section id="reports" class="section">
   <h2><span class="section-no">02</span> Scouting reports</h2>
-  <p class="section-note">Six projects, all shipped. Written the way a scout would file them: what it is, what it does, what the numbers say.</p>
+  <p class="section-note">Eight projects, all shipped. Written the way a scout would file them: what it is, what it does, what the numbers say.</p>
 
   <article class="report">
     <div class="report-head">
@@ -95,12 +97,28 @@
 
   <article class="report">
     <div class="report-head">
+      <h3>pitchquality</h3>
+      <p class="report-pos">Expected-whiff model &middot; separating stuff from results</p>
+      <p class="report-year">2026</p>
+    </div>
+    <div class="report-body">
+      <p>Gradient-boosted model of the chance a swing misses, built only from how the pitch leaves the hand. Trained on 2025 Statcast, then tested on 2026, a season it never saw, across 1.27M pitches in total. The first version scored .652 AUC and lost to a pitcher&rsquo;s own past whiff rate. The missing piece was approach angle: deriving vertical and horizontal approach angles at the plate raised it to .767. The model&rsquo;s edge over raw results is biggest on small samples, like a reliever with 25 swings, and gone by 150. A 50/50 blend of model and results beats either one alone. Source: <a href="https://github.com/jakeyoung1/pitchquality">github.com/jakeyoung1/pitchquality</a>.</p>
+      <p class="report-tools">Python &middot; scikit-learn &middot; pandas &middot; Statcast &middot; 45 automated tests</p>
+    </div>
+    <div class="report-stat">
+      <p class="stat-value">.767</p>
+      <p class="stat-label">AUC on a held-out season</p>
+    </div>
+  </article>
+
+  <article class="report">
+    <div class="report-head">
       <h3>pricemon</h3>
       <p class="report-pos">E-commerce price monitoring &middot; dynamic-pricing detection</p>
       <p class="report-year">2026</p>
     </div>
     <div class="report-body">
-      <p>Python ETL pipeline (fetch, parse, normalize, store, diff, report) that tracks product pages over time and separates algorithmic price changes from ordinary sales using confidence-scored change detection. Extraction is layered: JSON-LD, then OpenGraph, then microdata, then regex. History lives in SQLite; output is CSV and charts.</p>
+      <p>Python ETL pipeline (fetch, parse, normalize, store, diff, report) that tracks product pages over time and separates algorithmic price changes from ordinary sales using confidence-scored change detection. Extraction is layered: JSON-LD, then OpenGraph, then microdata, then regex. History lives in SQLite; output is CSV and charts. The detection engine was later ported to TypeScript and open-sourced as <a href="https://github.com/jakeyoung1/moot-engine">moot-engine</a>, tested against the Python original.</p>
       <p class="report-tools">Python &middot; SQLite &middot; ETL &middot; JSON-LD &middot; automated testing</p>
     </div>
     <div class="report-stat">
@@ -143,12 +161,28 @@
 
   <article class="report">
     <div class="report-head">
+      <h3>PhaseMap</h3>
+      <p class="report-pos">Soccer phase analyzer &middot; evidence-checked AI</p>
+      <p class="report-year">2026</p>
+    </div>
+    <div class="report-body">
+      <p>Reads player and ball tracking data at 25 frames per second, splits a match into possession phases, and measures each one: passes, pressure on the passer, defenders bypassed, back-line height, pitch control. Every measurement becomes a numbered fact. Claude writes the tactical breakdown, and every claim in it has to cite those facts. PhaseMap then checks each number and player name against the facts before the claim reaches the report. All four open-play goals in the sample match are broken down, and every checked claim is backed. Source: <a href="https://github.com/jakeyoung1/phasemap">github.com/jakeyoung1/phasemap</a>.</p>
+      <p class="report-tools">Python &middot; NumPy &middot; SciPy &middot; Claude API &middot; tracking data</p>
+    </div>
+    <div class="report-stat">
+      <p class="stat-value">4/4</p>
+      <p class="stat-label">goal breakdowns, every claim backed</p>
+    </div>
+  </article>
+
+  <article class="report">
+    <div class="report-head">
       <h3>Veris</h3>
       <p class="report-pos">Provenance-first web access for AI agents</p>
       <p class="report-year">2026</p>
     </div>
     <div class="report-body">
-      <p>TypeScript MCP server, published on npm as <a href="https://www.npmjs.com/package/veris-mcp">veris-mcp</a>, that returns clean web content together with verifiable source metadata: author, publish and modified dates, canonical URL, content hash, license. A SEC EDGAR module extracts revenue, net income, and EPS straight from XBRL filings, each figure stamped with its official source, with scheduled change detection on top.</p>
+      <p>TypeScript MCP server, published on npm as <a href="https://www.npmjs.com/package/veris-mcp">veris-mcp</a>, that returns clean web content together with verifiable source metadata: author, publish and modified dates, canonical URL, content hash, license. A SEC EDGAR module extracts revenue, net income, and EPS straight from XBRL filings, each figure stamped with its official source, with scheduled change detection on top. Source: <a href="https://github.com/jakeyoung1/veris">github.com/jakeyoung1/veris</a>.</p>
       <p class="report-tools">TypeScript &middot; Node.js &middot; MCP &middot; SEC EDGAR / XBRL &middot; npm</p>
     </div>
     <div class="report-stat">

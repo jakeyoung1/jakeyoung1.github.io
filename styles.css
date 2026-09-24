@@ -182,7 +182,7 @@ a:focus-visible, .masthead-nav a:focus-visible {
 .statline th, .statline td {
   border: 1px solid var(--rule);
   text-align: center;
-  padding: 0.55rem 0.75rem;
+  padding: 0.55rem 0.5rem;
 }
 
 .statline thead th {
