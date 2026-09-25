@@ -6,7 +6,7 @@ brand
 
 ## Product Purpose
 
-Single-page personal portfolio for Jake Young, entry-level Data Analyst / Business Analyst (B.S. Business Analytics, Saint Mary's College of California, May 2026). The URL goes on his resume, LinkedIn, and every job application. Its one job: convert a recruiter's 45-second click into a phone screen. Secondary job: give hiring managers technical proof (eight shipped projects) that survives scrutiny in an interview.
+Single-page personal portfolio for Jake Young, entry-level Data Analyst / Business Analyst (B.S. Business Analytics, Saint Mary's College of California, May 2026). The URL goes on his resume, LinkedIn, and every job application. Its one job: convert a recruiter's 45-second click into a phone screen. Secondary job: give hiring managers technical proof (nine shipped projects) that survives scrutiny in an interview.
 
 ## Users
 
